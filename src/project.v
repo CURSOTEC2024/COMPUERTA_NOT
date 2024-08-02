@@ -20,11 +20,11 @@ module tt_um_NOT (
   C_NOT C1 (.a(ui_in[0]), .c(uo_out[0]));
     assign uo_out [7:1] = 7'b0;
     
-    assign uio_out = 0;
-    assign uio_oe = 0;
+    assign uio_out [7:0] = 8'b0;
+    assign uio_oe [7:0] = 8'b0;
 
   // List all unused inputs to prevent warnings
-    wire _unused = &{ena, clk, rst_n, ui_in [7:1], uio_in [7:0], 1'b0};
+    wire _unused = &{ena, clk, rst_n, ui_in [7:1], uio_in, 1'b0};
 
 
 endmodule
